@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡BLACK DENGAR CYBER 96 GANG⚡ - SYSTEM ADMISSION</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: #050505;
+            color: #00ff66;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        /* Intro Terminal Screen */
+        #intro-screen {
+            width: 100%;
+            max-width: 650px;
+            background: rgba(0, 20, 0, 0.9);
+            border: 2px solid #00ff66;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
+        }
+
+        .terminal-header {
+            border-bottom: 1px dashed #00ff66;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 13px;
+            color: #00cc55;
+            letter-spacing: 2px;
+        }
+
+        #typewriter {
+            font-size: 15px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            margin-bottom: 25px;
+            min-height: 200px;
+            color: #00ff66;
+            font-weight: bold;
+        }
+
+        .join-btn {
+            background: #003311;
+            color: #00ff66;
+            border: 2px solid #00ff66;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+            display: none;
+            transition: 0.3s;
+        }
+
+        .join-btn:hover {
+            background: #00ff66;
+            color: #000;
+        }
+
+        /* Main Admission Form Container */
+        #main-content {
+            display: none;
+            width: 100%;
+            max-width: 700px;
+            background: #080c08;
+            border: 2px solid #00ff66;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(0, 255, 102, 0.2);
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid #00ff66;
+            box-shadow: 0 0 15px #00ff66;
+        }
+
+        .team-title {
+            text-align: center;
+            font-size: 20px;
+            color: #00ff66;
+            margin-bottom: 5px;
+            text-shadow: 0 0 8px #00ff66;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 13px;
+            color: #88ffaa;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .rules-box {
+            border: 1px solid #00aa44;
+            background: rgba(0, 40, 10, 0.3);
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .rules-box h3 {
+            color: #ffcc00;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .rules-box ol {
+            padding-left: 20px;
+        }
+
+        .rules-box li {
+            margin-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            background: #001505;
+            border: 1px solid #00aa44;
+            color: #00ff66;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
+            border-color: #00ff66;
+            box-shadow: 0 0 8px rgba(0, 255, 102, 0.5);
+        }
+
+        .file-upload {
+            border: 1px dashed #00ff66;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            background: #001100;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-btn {
+            background: #004411;
+            color: #00ff66;
+            padding: 8px 15px;
+            border: 1px solid #00ff66;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            background: #00aa44;
+            color: #000;
+            border: none;
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            box-shadow: 0 0 15px #00aa44;
+        }
+
+        .submit-btn:hover {
+            background: #00ff66;
+            box-shadow: 0 0 25px #00ff66;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed #00aa44;
+        }
+
+        .footer-links a {
+            color: #00ff66;
+            text-decoration: none;
+            font-size: 12px;
+            border: 1px solid #00aa44;
+            padding: 6px 12px;
+            border-radius: 4px;
+            background: #001a05;
+        }
+
+        .footer-links a:hover {
+            background: #00ff66;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Terminal Animation Screen -->
+    <div id="intro-screen">
+        <div class="terminal-header">THE CYBER SECURITY // ADMISSION RULES</div>
+        <div id="typewriter"></div>
+        <button class="join-btn" id="joinBtn" onclick="showForm()">JOIN NOW</button>
+    </div>
+
+    <!-- Main Admission Form Screen -->
+    <div id="main-content">
+        <div class="logo-container">
+            <img src="https://i.postimg.cc/wTYmsxhH/FB-IMG-1793800472549.jpg" alt="Team Logo">
+        </div>
+
+        <h1 class="team-title">⚡BLACK DENGAR CYBER 96 GANG⚡</h1>
+        <div class="sub-title">[ SYSTEM ADMISSION FORM ]</div>
+
+        <div class="rules-box">
+            <h3>⚠️ নিয়মাবলি ও আচরণগত নির্দেশাবলী (Rules) ⚠️</h3>
+            <ol>
+                <li>(সততা ও একনিষ্ঠতা): টিম এবং গ্রুপের সকল কার্যক্রমে সততা ও একনিষ্ঠতা রাখা অত্যন্ত জরুরি।</li>
+                <li>(আইন, নৈতিকতা ও দায়িত্ব): কোনো অবৈধ বা ক্ষতিকর কর্মকাণ্ড পরিচালন করা সম্পূর্ণ নিষিদ্ধ।</li>
+                <li>(অভিজ্ঞতা ও দক্ষতা উন্নয়ন): নিয়মিত প্র্যাকটিস ও গাইডলাইন মেনে চলা।</li>
+                <li>(অনুমতি ও দায়িত্ববোধ): অফিশিয়াল অনুমতি ছাড়া কোনো কাজ করা যাবে না।</li>
+                <li>(সিকিউরিটি সংক্রান্ত নিয়মাবলি): টিমের গোপন তথ্য বাইরে প্রকাশ করা যাবে না।</li>
+                <li>(ঐক্য ও সহযোগিতা): টিমের সদস্যরা একে অপরকে সাহায্য করবে।</li>
+                <li>(প্রতারণা নিষিদ্ধ): টিমের নাম ব্যবহার করে কোনো প্রকার প্রতারণা করা যাবে না।</li>
+                <li>(শৃঙ্খলভঙ্গ শাস্তি): অপরাধের গুরুত্ব অনুযায়ী দল থেকে বহিষ্কার করা হবে।</li>
+            </ol>
+        </div>
+
+        <form id="admissionForm">
+            <div class="form-group">
+                <label>> নাম (Name):</label>
+                <input type="text" id="name" placeholder="আপনার পূর্ণ নাম লিখুন" required>
+            </div>
+
+            <div class="form-group">
+                <label>> বয়স (Age):</label>
+                <input type="number" id="age" placeholder="আপনার বয়স" required>
+            </div>
+
+            <div class="form-group">
+                <label>> জন্ম তারিখ (Date of Birth):</label>
+                <input type="date" id="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label>> স্থায়ী ঠিকানা (Permanent Address):</label>
+                <input type="text" id="p_address" placeholder="স্থায়ী ঠিকানা" required>
+            </div>
+
+            <div class="form-group">
+                <label>> বর্তমান ঠিকানা (Current Address):</label>
+                <input type="text" id="c_address" placeholder="বর্তমান ঠিকানা" required>
+            </div>
+
+            <div class="form-group">
+                <label>> মোবাইল নম্বর (Phone):</label>
+                <input type="text" id="phone" placeholder="017xxxxxxxx" required>
+            </div>
+
+            <div class="form-group">
+                <label>> ইমেইল (Email):</label>
+                <input type="email" id="email" placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>> আগে কোনো টিমে ছিলেন? (Previous Team):</label>
+                <select id="prev_team">
+                    <option value="না">না</option>
+                    <option value="হ্যাঁ">হ্যাঁ</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>> আপনি কেন Join হতে চান? (Reason):</label>
+                <textarea id="reason" rows="3" placeholder="সংক্ষেপে আপনার কারণ লিখুন..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>> নিজ ছবি আপলোড করুন (Profile Photo):</label>
+                <div class="file-upload">
+                    <label class="custom-file-btn" for="profile_pic">ছবি তুলুন / ফাইল পছন্দ করুন</label>
+                    <input type="file" id="profile_pic" accept="image/*" required>
+                    <div id="profile_name" style="font-size:11px; margin-top:5px;"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>> NID কার্ড / জন্ম সনদের ছবি আপলোড করুন:</label>
+                <div class="file-upload">
+                    <label class="custom-file-btn" for="nid_pic">NID / জন্ম সনদ ছবি তুলুন</label>
+                    <input type="file" id="nid_pic" accept="image/*" required>
+                    <div id="nid_name" style="font-size:11px; margin-top:5px;"></div>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-btn">EXECUTE // JOIN NOW</button>
+        </form>
+
+        <div class="footer-links">
+            <a href="https://www.facebook.com/share/19qgZyGMBg/" target="_blank">[ FACEBOOK PAGE ]</a>
+            <a href="https://t.me/+klki7ISlgkkyYTA1" target="_blank">[ TELEGRAM ]</a>
+        </div>
+    </div>
+
+    <script>
+        // Intro Terminal Text Data
+        const lines = [
+            "আসসালামু আলাইকুম",
+            "WELCOME TO ⚡BLACK DENGAR CYBER 96 GANG⚡",
+            "",
+            "TEAM OWNER: MD BABU",
+            "TEAM AD.CEO: MD HRIDOY",
+            "TEAM ADD: MD OMIT",
+            "TEAM ADD: MD GISAN",
+            "TEAM ADDMIN: MD KAWSAR",
+            "",
+            "HELLO WORLD. WE ARE ⚡BLACK DENGAR CYBER 96 GANG⚡"
+        ];
+
+        let lineIdx = 0;
+        let charIdx = 0;
+        const typewriterDiv = document.getElementById("typewriter");
+        const joinBtn = document.getElementById("joinBtn");
+
+        function typeLine() {
+            if (lineIdx < lines.length) {
+                if (charIdx < lines[lineIdx].length) {
+                    typewriterDiv.innerHTML += lines[lineIdx].charAt(charIdx);
+                    charIdx++;
+                    setTimeout(typeLine, 35);
+                } else {
+                    typewriterDiv.innerHTML += "\n";
+                    lineIdx++;
+                    charIdx = 0;
+                    setTimeout(typeLine, 150);
+                }
+            } else {
+                joinBtn.style.display = "block";
+            }
+        }
+
+        window.onload = typeLine;
+
+        function showForm() {
+            document.getElementById("intro-screen").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        }
+
+        // Show File Name on Selection
+        document.getElementById('profile_pic').addEventListener('change', function(){
+            document.getElementById('profile_name').innerText = this.files[0] ? this.files[0].name : '';
+        });
+        document.getElementById('nid_pic').addEventListener('change', function(){
+            document.getElementById('nid_name').innerText = this.files[0] ? this.files[0].name : '';
+        });
+
+        // Telegram Bot Credentials
+        const botToken = "8899719686:AAExCyzexypmmE0sKbjR5W7HptOa2INgjlE";
+        const chatId = "6662344036";
+
+        // Form Submit Action & Telegram Send Logic
+        document.getElementById('admissionForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "SENDING...";
+            submitBtn.disabled = true;
+
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const dob = document.getElementById('dob').value;
+            const pAddress = document.getElementById('p_address').value;
+            const cAddress = document.getElementById('c_address').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const prevTeam = document.getElementById('prev_team').value;
+            const reason = document.getElementById('reason').value;
+
+            const profileFile = document.getElementById('profile_pic').files[0];
+            const nidFile = document.getElementById('nid_pic').files[0];
+
+            const message = `🚨 নতুন সদস্যের আবেদন প্রাপ্ত হয়েছে! 🚨\n\n` +
+                            `👤 নাম: ${name}\n` +
+                            `📅 বয়স: ${age}\n` +
+                            `🎂 জন্ম তারিখ: ${dob}\n` +
+                            `🏡 স্থায়ী ঠিকানা: ${pAddress}\n` +
+                            `🏠 বর্তমান ঠিকানা: ${cAddress}\n` +
+                            `📞 মোবাইল: ${phone}\n` +
+                            `📧 ইমেইল: ${email}\n` +
+                            `👥 পূর্বে টিমে ছিল?: ${prevTeam}\n` +
+                            `💬 যোগদানের কারণ: ${reason}`;
+
+            try {
+                // Send text message
+                const textResponse = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: message
+                    })
+                });
+
+                // Send profile photo if available
+                if (profileFile) {
+                    const profileData = new FormData();
+                    profileData.append('chat_id', chatId);
+                    profileData.append('photo', profileFile);
+                    profileData.append('caption', `👤 Profile Photo: ${name}`);
+                    await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+                        method: 'POST',
+                        body: profileData
+                    });
+                }
+
+                // Send NID photo if available
+                if (nidFile) {
+                    const nidData = new FormData();
+                    nidData.append('chat_id', chatId);
+                    nidData.append('photo', nidFile);
+                    nidData.append('caption', `🆔 NID/Birth Certificate: ${name}`);
+                    await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+                        method: 'POST',
+                        body: nidData
+                    });
+                }
+
+                alert('সফলভাবে আপনার আবেদনটি টেলিগ্রাম বটে পাঠিয়ে দেওয়া হয়েছে!');
+                document.getElementById('admissionForm').reset();
+                document.getElementById('profile_name').innerText = '';
+                document.getElementById('nid_name').innerText = '';
+            } catch (error) {
+                console.error(error);
+                alert('দুঃখিত, কোনো সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+            } finally {
+                submitBtn.innerText = "EXECUTE // JOIN NOW";
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+                  </html>
